@@ -1,13 +1,13 @@
 ﻿// Book: C++: zadania z programowania z przykładowymi rozwiązaniami
 
+using System.Text;
+
 namespace PracticalExercises;
 
 internal class FirstBook
 {
-	public static void FirstBookExercises() => MainMenu.DoWork(_functions, "First Book Exercises: ");
-
-	private static readonly Action[] _functions = new[]
-	{
+	private static readonly Action[] _functions =
+	[
 		Exercise_1_1, Exercise_1_2, Exercise_1_3, Exercise_1_4, Exercise_1_5, Exercise_1_6, Exercise_1_7,
 		Exercise_2_1, Exercise_2_2, Exercise_2_3, Exercise_2_4, Exercise_2_5,
 		Exercise_3_1, Exercise_3_2, Exercise_3_3, Exercise_3_4, Exercise_3_5, Exercise_3_6, Exercise_3_7, Exercise_3_8, Exercise_3_9, Exercise_3_10, Exercise_3_11, Exercise_3_12, Exercise_3_13, Exercise_3_14, Exercise_3_15, Exercise_3_16, Exercise_3_17, Exercise_3_18, Exercise_3_19, Exercise_3_20, Exercise_3_21, Exercise_3_22, Exercise_3_23, Exercise_3_24,
@@ -15,7 +15,10 @@ internal class FirstBook
 		Exercise_5_1, Exercise_5_2, Exercise_5_3, Exercise_5_4, Exercise_5_5, Exercise_5_6, Exercise_5_7, Exercise_5_8, Exercise_5_9,
 		Exercise_6_1, Exercise_6_2,
 		Exercise_7_1, Exercise_7_2, Exercise_7_3,
-	};
+	];
+
+	public static void FirstBookExercises()
+		=> MainMenu.DoWork(_functions, "First Book Exercises: ");
 
 	#region Chapter_1
 
@@ -34,11 +37,13 @@ internal class FirstBook
 
 	// Napisz program, który wyświetla na ekranie komputera wartość predefiniowanej stałej p = 3,14…
 	// Należy przyjąć format prezentowania tej stałej, oznaczanej w języku C++ jako M_PI, z dokładnością pięciu miejsc po kropce.
-	public static void Exercise_1_2() => Console.WriteLine($"The program displays the predefined constant pi with five place accuracy: {Math.PI:F5}");
+	public static void Exercise_1_2()
+		=> Console.WriteLine($"The program displays the predefined constant pi with five place accuracy: {Math.PI:F5}");
 
 	// Napisz program, który wyświetla na ekranie komputera pierwiastek kwadratowy z wartości predefiniowanej stałej p = 3,14...
 	// Należy przyjąć format wyświetlania tego pierwiastka z dokładnością dwóch miejsc po kropce.
-	public static void Exercise_1_3() => Console.WriteLine($"The program displays the square root of the pi value with two place accuracy: {Math.Sqrt(Math.PI):F2}");
+	public static void Exercise_1_3()
+		=> Console.WriteLine($"The program displays the square root of the pi value with two place accuracy: {Math.Sqrt(Math.PI):F2}");
 
 	// Napisz program, który oblicza objętość kuli o promieniu r. Wartość promienia wprowadzamy z klawiatury.
 	// W programie należy przyjąć, że r jest typu float (rzeczywistego).
@@ -52,10 +57,12 @@ internal class FirstBook
 	}
 
 	// Napisz program, który oblicza wynik dzielenia całkowitego bez reszty dla dwóch liczb całkowitych a = 37 i b = 11.
-	public static void Exercise_1_5() => Console.WriteLine(37 / 11);
+	public static void Exercise_1_5()
+		=> Console.WriteLine(37 / 11);
 
 	// Napisz program, który oblicza resztę z dzielenia całkowitego dla dwóch liczb całkowitych a = 37 i b = 11.
-	public static void Exercise_1_6() => Console.WriteLine(37 % 11);
+	public static void Exercise_1_6()
+		=> Console.WriteLine(37 % 11);
 
 	// Napisz program, który oblicza sumę, różnicę, iloczyn i iloraz dla dwóch liczb x i y wprowadzanych z klawiatury.
 	// W programie przyjmujemy, że liczby x i y są typu float (rzeczywistego).
@@ -73,8 +80,6 @@ internal class FirstBook
 	}
 
 	#endregion Chapter_1
-
-	// ***************** Chapter 2 *****************
 
 	#region Chapter_2
 
@@ -189,8 +194,6 @@ internal class FirstBook
 	}
 
 	#endregion Chapter_2
-
-	// ***************** Chapter 3 *****************
 
 	#region Chapter_3
 
@@ -404,7 +407,7 @@ internal class FirstBook
 	public static void Exercise_3_16()
 	{
 		Random random = new();
-		int min, max, sum = 0, count = 5;
+		int min, max, sum, count = 5;
 		int tmpNumber = random.Next(100);
 		min = max = sum = tmpNumber;
 		Console.Write(tmpNumber + " ");
@@ -425,7 +428,7 @@ internal class FirstBook
 	public static void Exercise_3_17()
 	{
 		Random random = new();
-		int min, max, sum = 0, count = 5;
+		int min, max, sum, count = 5;
 		int tmpNumber = random.Next(100);
 		min = max = sum = tmpNumber;
 		Console.Write(tmpNumber + " ");
@@ -448,7 +451,7 @@ internal class FirstBook
 	public static void Exercise_3_18()
 	{
 		Random random = new();
-		int min, max, sum = 0, count = 5;
+		int min, max, sum, count = 5;
 		int tmpNumber = random.Next(100);
 		min = max = sum = tmpNumber;
 		Console.Write(tmpNumber + " ");
@@ -483,7 +486,7 @@ internal class FirstBook
 	// Napisz program wyświetlający tabliczkę mnożenia dla liczb od 1 do 100 z wykorzystaniem podwójnej pętli do ... while.
 	public static void Exercise_3_20()
 	{
-		int i = 1, j = 1;
+		int i = 1, j;
 		do
 		{
 			j = 1;
@@ -500,7 +503,7 @@ internal class FirstBook
 	// Napisz program wyświetlający tabliczkę mnożenia dla liczb od 1 do 100 z wykorzystaniem podwójnej pętli while.
 	public static void Exercise_3_21()
 	{
-		int i = 1, j = 1;
+		int i = 1, j;
 		while (i <= 10)
 		{
 			j = 1;
@@ -611,8 +614,6 @@ internal class FirstBook
 	}
 
 	#endregion Chapter_3
-
-	// ***************** Chapter 4 *****************
 
 	#region Chapter_4
 
@@ -837,8 +838,6 @@ internal class FirstBook
 
 	#endregion Chapter_4
 
-	// ***************** Chapter 5 *****************
-
 	#region Chapter_5
 
 	// Napisz program obliczający pole prostokąta. Powinien on zawierać jeden podprogram: bezparametrową funkcję pole_prostokata(), w której zawarty będzie algorytm obliczania pola.
@@ -853,7 +852,8 @@ internal class FirstBook
 		double sideB = double.Parse(Console.ReadLine());
 		Console.WriteLine($"The area of a rectangle = {RectangleArea(sideA, sideB):F2}");
 
-		static double RectangleArea(double a, double b) => a * b;
+		static double RectangleArea(double a, double b)
+			=> a * b;
 	}
 
 	// Napisz program obliczający pole prostokąta. Powinien on zawierać jeden podprogram: bezparametrową funkcję pole_prostokata, w której zawarty będzie algorytm obliczania pola.
@@ -868,7 +868,8 @@ internal class FirstBook
 		double sideB = double.Parse(Console.ReadLine());
 		Console.WriteLine($"The area of a rectangle = {RectangleArea(sideA, sideB):F2}");
 
-		static double RectangleArea(double a, double b) => a * b;
+		static double RectangleArea(double a, double b)
+			=> a * b;
 	}
 
 	// Napisz program obliczający pole prostokąta. Powinien on zawierać jeden podprogram: funkcję pole_prostokata(), do której parametry przekazywane są przez wartość.
@@ -883,7 +884,8 @@ internal class FirstBook
 		double sideB = double.Parse(Console.ReadLine());
 		Console.WriteLine($"The area of a rectangle = {RectangleArea(sideA, sideB):F2}");
 
-		static double RectangleArea(double a, double b) => a * b;
+		static double RectangleArea(double a, double b)
+			=> a * b;
 	}
 
 	// Napisz program, który oblicza pole prostokąta. Powinien on zawierać trzy bezparametrowe funkcje: czytaj_dane(), przetworz_dane() oraz wyswietl_wynik().
@@ -904,7 +906,8 @@ internal class FirstBook
 			y = double.Parse(Console.ReadLine());
 		}
 
-		static double RectangleArea(double a, double b) => a * b;
+		static double RectangleArea(double a, double b)
+			=> a * b;
 	}
 
 	// Napisz program, który z wykorzystaniem instrukcji wyboru switch ... case oblicza pierwiastki równania kwadratowego ax2+bx+c = 0,
@@ -1135,8 +1138,6 @@ internal class FirstBook
 
 	#endregion Chapter_5
 
-	// ***************** Chapter 6 *****************
-
 	#region Chapter_6
 
 	// Napisz zgodnie z zasadami programowania obiektowego program, który oblicza pole prostokąta. Klasa powinna zawierać trzy metody:
@@ -1164,9 +1165,11 @@ internal class FirstBook
 			_b = double.Parse(Console.ReadLine());
 		}
 
-		public void DoCalculations() => _area = _a * _b;
+		public void DoCalculations()
+			=> _area = _a * _b;
 
-		public void ShowResult() => Console.WriteLine($"Rectangle area = {_area:F2}");
+		public void ShowResult()
+			=> Console.WriteLine($"Rectangle area = {_area:F2}");
 	}
 
 	// Napisz zgodnie z zasadami programowania obiektowego program, który oblicza pierwiastki równania kwadratowego ax2+bx+c = 0 z wykorzystaniem instrukcji wyboru switch ... case.
@@ -1176,13 +1179,13 @@ internal class FirstBook
 	// wyswietl_wynik() — jest odpowiedzialna za pokazanie wyników na ekranie monitora. Dla zmiennych a, b, c, x1 oraz x2 należy przyjąć format wyświetlania ich z dwoma miejscami po kropce.
 	public static void Exercise_6_2()
 	{
-		Trinominal trinominal = new();
-		trinominal.ReadData();
-		trinominal.DoCalculations();
-		trinominal.ShowResults();
+		Trinomial trinomial = new();
+		trinomial.ReadData();
+		trinomial.DoCalculations();
+		trinomial.ShowResults();
 	}
 
-	private class Trinominal
+	private class Trinomial
 	{
 		private double _a, _b, _c, _x1, _x2;
 		private int _resultsCount;
@@ -1247,8 +1250,6 @@ internal class FirstBook
 
 	#endregion Chapter_6
 
-	// ***************** Chapter 7 *****************
-
 	#region Chapter_7
 
 	// Napisz zgodnie z zasadami programowania obiektowego program, który wczytuje z klawiatury imię i nazwisko, zapisuje te dane do pliku tekstowego dane.txt, a następnie odczytuje je z niego i wyświetla na ekranie komputera. Klasa powinna zawierać trzy metody:
@@ -1283,15 +1284,17 @@ internal class FirstBook
 		}
 
 		string path = Path.Combine(Environment.CurrentDirectory, "Plik2.txt");
+		StringBuilder textToSave = new();
 
 		for (int i = 0; i < numbers.GetLength(0); i++)
 		{
 			for (int j = 0; j < numbers.GetLength(1); j++)
 			{
-				File.AppendAllText(path, numbers[i, j] + " ");
+				textToSave.Append(numbers[i, j] + " ");
 			}
-			File.AppendAllText(path, Environment.NewLine);
+			textToSave.Append(Environment.NewLine);
 		}
+		File.AppendAllText(path, textToSave.ToString());
 
 		Console.WriteLine(File.ReadAllText(path));
 	}
@@ -1318,14 +1321,16 @@ internal class FirstBook
 		}
 
 		string path = Path.Combine(Environment.CurrentDirectory, "Plik3a.txt");
+		StringBuilder textToSave = new();
 		for (int i = 0; i < numbers.GetLength(0); i++)
 		{
 			for (int j = 0; j < numbers.GetLength(1); j++)
 			{
-				File.AppendAllText(path, numbers[i, j] + " ");
+				textToSave.Append(numbers[i, j] + " ");
 			}
-			File.AppendAllText(path, Environment.NewLine);
+			textToSave.Append(Environment.NewLine);
 		}
+		File.AppendAllText(path, textToSave.ToString());
 		Console.WriteLine(File.ReadAllText(path));
 
 		int[,] numbers2 = new int[size, size];
@@ -1340,15 +1345,16 @@ internal class FirstBook
 			}
 		}
 		string path2 = Path.Combine(Environment.CurrentDirectory, "Plik3b.txt");
+		textToSave.Clear();
 		for (int i = 0; i < numbers2.GetLength(0); i++)
 		{
 			for (int j = 0; j < numbers2.GetLength(1); j++)
 			{
-				File.AppendAllText(path2, numbers2[i, j] + " ");
+				textToSave.Append(numbers2[i, j] + " ");
 			}
-			File.AppendAllText(path2, Environment.NewLine);
+			textToSave.Append(Environment.NewLine);
 		}
-
+		File.AppendAllText(path2, textToSave.ToString());
 		Console.WriteLine(File.ReadAllText(path2));
 	}
 

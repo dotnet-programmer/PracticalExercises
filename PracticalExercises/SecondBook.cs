@@ -2,12 +2,13 @@
 
 internal class SecondBook
 {
-	public static void SecondBookExercises() => MainMenu.DoWork(_functions, "Second Book Exercises: ");
-
-	private static readonly Action[] _functions = new[]
-	{
+	private static readonly Action[] _functions =
+	[
 		Exercise_1_1,
-	};
+	];
+
+	public static void SecondBookExercises()
+		=> MainMenu.DoWork(_functions, "Second Book Exercises: ");
 
 	public static void Exercise_1_1()
 	{
