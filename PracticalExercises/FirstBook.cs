@@ -29,9 +29,9 @@ internal class FirstBook
 	{
 		Console.WriteLine("The program calculates the area of a rectangle.");
 		Console.WriteLine("Give side a: ");
-		double sideA = double.Parse(Console.ReadLine());
+		float sideA = float.Parse(Console.ReadLine());
 		Console.WriteLine("Give side b: ");
-		double sideB = double.Parse(Console.ReadLine());
+		float sideB = float.Parse(Console.ReadLine());
 		Console.WriteLine($"The area of a rectangle = {sideA * sideB:F2}");
 	}
 
@@ -52,7 +52,7 @@ internal class FirstBook
 	{
 		Console.WriteLine("The program calculates the volume of a sphere.");
 		Console.WriteLine("Give radius r: ");
-		double radius = double.Parse(Console.ReadLine());
+		float radius = float.Parse(Console.ReadLine());
 		Console.WriteLine($"The volume of a sphere = {4 * Math.PI * Math.Pow(radius, 3) / 3:F2}");
 	}
 
@@ -70,9 +70,9 @@ internal class FirstBook
 	public static void Exercise_1_7()
 	{
 		Console.Write("Give first number: ");
-		double num1 = double.Parse(Console.ReadLine());
+		float num1 = float.Parse(Console.ReadLine());
 		Console.Write("Give second number: ");
-		double num2 = double.Parse(Console.ReadLine());
+		float num2 = float.Parse(Console.ReadLine());
 		Console.WriteLine($"Addition = {num1 + num2:F2}");
 		Console.WriteLine($"Subtraction = {num1 - num2:F2}");
 		Console.WriteLine($"Multiplication = {num1 * num2:F2}");
@@ -140,27 +140,25 @@ internal class FirstBook
 		double number2 = double.Parse(Console.ReadLine());
 		Console.Write("Give number 3: ");
 		double number3 = double.Parse(Console.ReadLine());
+
 		if (number1 == 0)
 		{
 			Console.WriteLine("Error!");
 			return;
 		}
-		double delta = number2 * number2 - 4 * number1 * number3;
 
-		int number = delta > 0 ? 2 : delta == 0 ? 1 : 0;
-		switch (number)
+		double delta = number2 * number2 - 4 * number1 * number3;
+		switch (delta)
 		{
-			case 2:
+			case > 0:
 				Console.WriteLine($"Result 1 = {(-number2 - Math.Sqrt(delta)) / (2 * number1)}");
 				Console.WriteLine($"Result 2 = {(-number2 + Math.Sqrt(delta)) / (2 * number1)}");
 				break;
-			case 1:
+			case 0:
 				Console.WriteLine($"Result 1 = {(-number2) / (2 * number1)}");
 				break;
-			case 0:
+			case < 0:
 				Console.WriteLine("No results");
-				break;
-			default:
 				break;
 		}
 	}
@@ -233,14 +231,7 @@ internal class FirstBook
 	{
 		for (int i = 1; i <= 20; i++)
 		{
-			if (i < 20)
-			{
-				Console.Write(i + ", ");
-			}
-			else
-			{
-				Console.WriteLine(i + ".");
-			}
+			Console.Write($"{i}{(i < 20 ? ", " : ".")}");
 		}
 	}
 
@@ -250,14 +241,7 @@ internal class FirstBook
 		int i = 1;
 		do
 		{
-			if (i < 20)
-			{
-				Console.Write(i + ", ");
-			}
-			else
-			{
-				Console.WriteLine(i + ".");
-			}
+			Console.Write($"{i}{(i < 20 ? ", " : ".")}");
 			i++;
 		} while (i <= 20);
 	}
@@ -268,14 +252,7 @@ internal class FirstBook
 		int i = 1;
 		while (i <= 20)
 		{
-			if (i < 20)
-			{
-				Console.Write(i + ", ");
-			}
-			else
-			{
-				Console.WriteLine(i + ".");
-			}
+			Console.Write($"{i}{(i < 20 ? ", " : ".")}");
 			i++;
 		}
 	}
@@ -403,7 +380,8 @@ internal class FirstBook
 		Console.WriteLine(sum);
 	}
 
-	// Napisz program, który za pomocą instrukcji for znajduje największą i najmniejszą liczbę ze zbioru n liczb losowych z przedziału od 0 do 99 oraz oblicza ich średnią (w zadaniu n = 5).
+	// Napisz program, który za pomocą instrukcji for znajduje największą i najmniejszą liczbę ze zbioru n liczb losowych z przedziału od 0 do 99
+	// oraz oblicza ich średnią (w zadaniu n = 5).
 	public static void Exercise_3_16()
 	{
 		Random random = new();
@@ -424,7 +402,8 @@ internal class FirstBook
 		Console.WriteLine($"Avg = {sum / count:F2}");
 	}
 
-	// Napisz program, który za pomocą instrukcji do ... while znajduje największą i najmniejszą liczbę ze zbioru n liczb losowych z przedziału od 0 do 99 oraz oblicza ich średnią (w zadaniu n = 5).
+	// Napisz program, który za pomocą instrukcji do ... while znajduje największą i najmniejszą liczbę ze zbioru n liczb losowych z przedziału od 0 do 99
+	// oraz oblicza ich średnią (w zadaniu n = 5).
 	public static void Exercise_3_17()
 	{
 		Random random = new();
@@ -447,7 +426,8 @@ internal class FirstBook
 		Console.WriteLine($"Avg = {sum / count:F2}");
 	}
 
-	// Napisz program, który za pomocą instrukcji while znajduje największą i najmniejszą liczbę ze zbioru n liczb losowych z przedziału od 0 do 99 oraz oblicza ich średnią (w zadaniu n = 5).
+	// Napisz program, który za pomocą instrukcji while znajduje największą i najmniejszą liczbę ze zbioru n liczb losowych z przedziału od 0 do 99
+	// oraz oblicza ich średnią (w zadaniu n = 5).
 	public static void Exercise_3_18()
 	{
 		Random random = new();
@@ -517,31 +497,17 @@ internal class FirstBook
 		}
 	}
 
-	// Napisz program, który wyświetla duże litery alfabetu od a do z i od z do A, z wykorzystaniem pętli for.
+	// Napisz program, który wyświetla duże litery alfabetu od A do Z i od Z do A, z wykorzystaniem pętli for.
 	public static void Exercise_3_22()
 	{
 		for (char i = 'A'; i <= 'Z'; i++)
 		{
-			if (i < 'Z')
-			{
-				Console.Write(i + ", ");
-			}
-			else
-			{
-				Console.Write(i + ".");
-			}
+			Console.Write(i + " ");
 		}
 		Console.WriteLine();
 		for (char i = 'Z'; i >= 'A'; i--)
 		{
-			if (i > 'A')
-			{
-				Console.Write(i + ", ");
-			}
-			else
-			{
-				Console.Write(i + ".");
-			}
+			Console.Write(i + " ");
 		}
 	}
 
@@ -551,14 +517,7 @@ internal class FirstBook
 		char i = 'A';
 		do
 		{
-			if (i < 'Z')
-			{
-				Console.Write(i + ", ");
-			}
-			else
-			{
-				Console.Write(i + ".");
-			}
+			Console.Write(i + " ");
 			i++;
 		} while (i <= 'Z');
 
@@ -567,14 +526,7 @@ internal class FirstBook
 		i = 'Z';
 		do
 		{
-			if (i > 'A')
-			{
-				Console.Write(i + ", ");
-			}
-			else
-			{
-				Console.Write(i + ".");
-			}
+			Console.Write(i + " ");
 			i--;
 		} while (i >= 'A');
 	}
@@ -585,14 +537,7 @@ internal class FirstBook
 		char i = 'A';
 		while (i <= 'Z')
 		{
-			if (i < 'Z')
-			{
-				Console.Write(i + ", ");
-			}
-			else
-			{
-				Console.Write(i + ".");
-			}
+			Console.Write(i + " ");
 			i++;
 		}
 
@@ -601,14 +546,7 @@ internal class FirstBook
 		i = 'Z';
 		while (i >= 'A')
 		{
-			if (i > 'A')
-			{
-				Console.Write(i + ", ");
-			}
-			else
-			{
-				Console.Write(i + ".");
-			}
+			Console.Write(i + " ");
 			i--;
 		}
 	}
@@ -652,6 +590,7 @@ internal class FirstBook
 	public static void Exercise_4_3()
 	{
 		const int size = 10;
+		int sum = 0;
 		int[,] numbers = new int[size, size];
 		for (int i = 0; i < numbers.GetLength(0); i++)
 		{
@@ -660,10 +599,10 @@ internal class FirstBook
 				if (i == j)
 				{
 					numbers[i, j] = 1;
+					sum += i;
 				}
 			}
 		}
-
 		for (int i = 0; i < numbers.GetLength(0); i++)
 		{
 			for (int j = 0; j < numbers.GetLength(1); j++)
@@ -672,6 +611,7 @@ internal class FirstBook
 			}
 			Console.WriteLine();
 		}
+		Console.WriteLine($"Sum = {sum}");
 	}
 
 	// Napisz program, który w zadeklarowanej tablicy dwuwymiarowej 10×10 o nazwie macierz umieszcza na przekątnej liczby od 0 do 9, a poza przekątną 0.
@@ -823,7 +763,7 @@ internal class FirstBook
 		{
 			for (int j = 0; j < numbers2.GetLength(1); j++)
 			{
-				numbers2[i, j] = numbers1[i, i];
+				numbers2[i, j] = numbers1[j, i];
 			}
 		}
 		for (int i = 0; i < numbers2.GetLength(0); i++)
@@ -841,8 +781,7 @@ internal class FirstBook
 	#region Chapter_5
 
 	// Napisz program obliczający pole prostokąta. Powinien on zawierać jeden podprogram: bezparametrową funkcję pole_prostokata(), w której zawarty będzie algorytm obliczania pola.
-	// Wartości boków a i b wprowadzamy z klawiatury. w programie należy założyć, że zmienne a, b oraz pole są typu float (rzeczywistego) i są one zmiennymi globalnymi.
-	// Należy dla nich przyjąć format wyświetlania ich z dwoma miejscami po kropce.
+	// Wartości boków a i b wprowadzamy z klawiatury. Należy dla nich przyjąć format wyświetlania ich z dwoma miejscami po kropce.
 	public static void Exercise_5_1()
 	{
 		Console.WriteLine("The program calculates the area of a rectangle.");
@@ -857,8 +796,7 @@ internal class FirstBook
 	}
 
 	// Napisz program obliczający pole prostokąta. Powinien on zawierać jeden podprogram: bezparametrową funkcję pole_prostokata, w której zawarty będzie algorytm obliczania pola.
-	// Wartości boków a i b wprowadzamy z klawiatury. w programie należy założyć, że zmienne a, b oraz pole są typu float (rzeczywistego) i są zmiennymi lokalnymi.
-	// Należy dla nich przyjąć format wyświetlania ich z dwoma miejscami po kropce.
+	// Wartości boków a i b wprowadzamy z klawiatury. Należy dla nich przyjąć format wyświetlania ich z dwoma miejscami po kropce.
 	public static void Exercise_5_2()
 	{
 		Console.WriteLine("The program calculates the area of a rectangle.");
@@ -873,8 +811,7 @@ internal class FirstBook
 	}
 
 	// Napisz program obliczający pole prostokąta. Powinien on zawierać jeden podprogram: funkcję pole_prostokata(), do której parametry przekazywane są przez wartość.
-	// Wartości boków a i b wprowadzamy z klawiatury. w programie należy założyć, że zmienne a, b oraz pole są typu float (rzeczywistego) i są zmiennymi globalnymi.
-	// Należy dla nich przyjąć format wyświetlania ich z dwoma miejscami po kropce.
+	// Wartości boków a i b wprowadzamy z klawiatury. Należy dla nich przyjąć format wyświetlania ich z dwoma miejscami po kropce.
 	public static void Exercise_5_3()
 	{
 		Console.WriteLine("The program calculates the area of a rectangle.");
@@ -889,17 +826,16 @@ internal class FirstBook
 	}
 
 	// Napisz program, który oblicza pole prostokąta. Powinien on zawierać trzy bezparametrowe funkcje: czytaj_dane(), przetworz_dane() oraz wyswietl_wynik().
-	// Wartości boków a i b wprowadzamy z klawiatury. w programie należy założyć, że zmienne a, b oraz pole są typu float (rzeczywistego) i są zmiennymi globalnymi.
-	// Należy dla nich przyjąć format wyświetlania ich z dwoma miejscami po kropce.
+	// Wartości boków a i b wprowadzamy z klawiatury. Należy dla nich przyjąć format wyświetlania ich z dwoma miejscami po kropce.
 	// Funkcja czytaj_dane() czyta wartości boków a i b, przetworz_dane() oblicza pole prostokąta, a wyswietl_wynik() prezentuje wyniki na ekranie komputera.
 	public static void Exercise_5_4()
 	{
-		Console.WriteLine("The program calculates the area of a rectangle.");
 		ReadData(out double sideA, out double sideB);
-		Console.WriteLine($"The area of a rectangle = {RectangleArea(sideA, sideB):F2}");
+		ShowResult(RectangleArea(sideA, sideB));
 
 		static void ReadData(out double x, out double y)
 		{
+			Console.WriteLine("The program calculates the area of a rectangle.");
 			Console.WriteLine("Give side a: ");
 			x = double.Parse(Console.ReadLine());
 			Console.WriteLine("Give side b: ");
@@ -908,6 +844,9 @@ internal class FirstBook
 
 		static double RectangleArea(double a, double b)
 			=> a * b;
+
+		static void ShowResult(double result)
+			=> Console.WriteLine($"The area of a rectangle = {result:F2}");
 	}
 
 	// Napisz program, który z wykorzystaniem instrukcji wyboru switch ... case oblicza pierwiastki równania kwadratowego ax2+bx+c = 0,
@@ -1143,7 +1082,8 @@ internal class FirstBook
 	// Napisz zgodnie z zasadami programowania obiektowego program, który oblicza pole prostokąta. Klasa powinna zawierać trzy metody:
 	// czytaj_dane() — umożliwia wprowadzenie do programu wartości boków a i b z klawiatury.w programie należy przyjąć, że boki oraz zmienna pole są typu float (rzeczywistego).
 	// przetworz_dane() — oblicza pole prostokąta według wzoru pole = a * b.
-	// wyswietl_wynik() — wyświetla wartości boków a i b oraz zmiennej pole w określonym formacie. Dla tych trzech zmiennych należy przyjąć format wyświetlania ich na ekranie z dwoma miejscami po kropce.
+	// wyswietl_wynik() — wyświetla wartości boków a i b oraz zmiennej pole w określonym formacie.
+	// Dla tych trzech zmiennych należy przyjąć format wyświetlania ich na ekranie z dwoma miejscami po kropce.
 	public static void Exercise_6_1()
 	{
 		RectangleArea rectangleArea = new();
@@ -1176,7 +1116,8 @@ internal class FirstBook
 	// Klasa powinna zawierać trzy metody:
 	// czytaj_dane() — jest odpowiedzialna za wczytanie danych do programu oraz obsłużenie sytuacji, kiedy a = 0. Zmienne a, b oraz c to liczby rzeczywiste wprowadzane z klawiatury.
 	// przetworz_dane() — odpowiada za wykonanie niezbędnych obliczeń.
-	// wyswietl_wynik() — jest odpowiedzialna za pokazanie wyników na ekranie monitora. Dla zmiennych a, b, c, x1 oraz x2 należy przyjąć format wyświetlania ich z dwoma miejscami po kropce.
+	// wyswietl_wynik() — jest odpowiedzialna za pokazanie wyników na ekranie monitora.
+	// Dla zmiennych a, b, c, x1 oraz x2 należy przyjąć format wyświetlania ich z dwoma miejscami po kropce.
 	public static void Exercise_6_2()
 	{
 		Trinomial trinomial = new();
@@ -1252,15 +1193,37 @@ internal class FirstBook
 
 	#region Chapter_7
 
-	// Napisz zgodnie z zasadami programowania obiektowego program, który wczytuje z klawiatury imię i nazwisko, zapisuje te dane do pliku tekstowego dane.txt, a następnie odczytuje je z niego i wyświetla na ekranie komputera. Klasa powinna zawierać trzy metody:
+	// Napisz zgodnie z zasadami programowania obiektowego program, który wczytuje z klawiatury imię i nazwisko, zapisuje te dane do pliku tekstowego dane.txt,
+	// a następnie odczytuje je z niego i wyświetla na ekranie komputera.
+	// Klasa powinna zawierać trzy metody:
 	// czytaj_dane() — wczytuje z klawiatury imię i nazwisko;
 	// zapisz_dane_do_pliku() — zapisuje imię i nazwisko do pliku tekstowego dane.txt;
 	// czytaj_dane_z_pliku() — odczytuje dane z pliku dane.txt i wyświetla je na ekranie komputera.
 	public static void Exercise_7_1()
 	{
-		string path = Path.Combine(Environment.CurrentDirectory, "Plik1.txt");
-		File.WriteAllText(path, Console.ReadLine());
-		Console.WriteLine(File.ReadAllText(path));
+		FileHelper fileHelper = new();
+		fileHelper.ReadData();
+		fileHelper.SaveData();
+		fileHelper.ShowData();
+	}
+
+	private class FileHelper
+	{
+		private readonly string _path = Path.Combine(Environment.CurrentDirectory, "data.txt");
+
+		private string _name;
+
+		public void ReadData()
+		{
+			Console.WriteLine("Write your name and surname: ");
+			_name = Console.ReadLine();
+		}
+
+		public void SaveData()
+			=> File.WriteAllText(_path, _name);
+
+		public void ShowData()
+			=> Console.WriteLine(File.ReadAllText(_path));
 	}
 
 	// Napisz zgodnie z zasadami programowania obiektowego program, który tablicę 10×10 zapisuje do pliku tekstowego dane.txt,
@@ -1270,33 +1233,52 @@ internal class FirstBook
 	// czytaj_dane_z_pliku() — odczytuje tablicę 10×10 z pliku dane.txt i wyświetla ją na ekranie komputera.
 	public static void Exercise_7_2()
 	{
-		const int size = 10;
-		int[,] numbers = new int[size, size];
-		for (int i = 0; i < numbers.GetLength(0); i++)
+		FileHelperForArray fileHelper = new();
+		fileHelper.ReadData();
+		fileHelper.SaveData();
+		fileHelper.ShowData();
+	}
+
+	private class FileHelperForArray
+	{
+		private const int Size = 10;
+		private readonly string _path = Path.Combine(Environment.CurrentDirectory, "array1.txt");
+		private int[,] _numbers;
+
+		public void ReadData()
 		{
-			for (int j = 0; j < numbers.GetLength(1); j++)
+			_numbers = new int[Size, Size];
+
+			for (int i = 0; i < _numbers.GetLength(0); i++)
 			{
-				if (i == j)
+				for (int j = 0; j < _numbers.GetLength(1); j++)
 				{
-					numbers[i, j] = i;
+					if (i == j)
+					{
+						_numbers[i, j] = i;
+					}
 				}
 			}
 		}
 
-		string path = Path.Combine(Environment.CurrentDirectory, "Plik2.txt");
-		StringBuilder textToSave = new();
-
-		for (int i = 0; i < numbers.GetLength(0); i++)
+		public void SaveData()
 		{
-			for (int j = 0; j < numbers.GetLength(1); j++)
-			{
-				textToSave.Append(numbers[i, j] + " ");
-			}
-			textToSave.Append(Environment.NewLine);
-		}
-		File.AppendAllText(path, textToSave.ToString());
+			StringBuilder textToSave = new();
 
-		Console.WriteLine(File.ReadAllText(path));
+			for (int i = 0; i < _numbers.GetLength(0); i++)
+			{
+				for (int j = 0; j < _numbers.GetLength(1); j++)
+				{
+					textToSave.Append(_numbers[i, j] + " ");
+				}
+				textToSave.Append(Environment.NewLine);
+			}
+
+			File.WriteAllText(_path, textToSave.ToString());
+		}
+
+		public void ShowData()
+			=> Console.WriteLine(File.ReadAllText(_path));
 	}
 
 	// Napisz zgodnie z zasadami programowania obiektowego program, który tablicę a o wymiarach 10×10 przekształca w tablicę b i zapisuje wynik do pliku tekstowego dane.txt,
@@ -1307,55 +1289,92 @@ internal class FirstBook
 	// czytaj_dane_z_pliku() — odczytuje tablicę c o wymiarach 10×10 z pliku i wyświetla ją na ekranie.
 	public static void Exercise_7_3()
 	{
-		const int size = 10;
-		int[,] numbers = new int[size, size];
-		for (int i = 0; i < numbers.GetLength(0); i++)
+		FileHelperForArray2 fileHelper = new();
+		fileHelper.ReadData();
+		fileHelper.PrepareArrayToSave();
+		fileHelper.SaveData();
+		fileHelper.ShowData();
+	}
+
+	private class FileHelperForArray2
+	{
+		private const int Size = 10;
+		private readonly string _path = Path.Combine(Environment.CurrentDirectory, "array2.txt");
+		private int[,] _numbers, _numbersToSave, _numbersFromFile;
+
+		public void ReadData()
 		{
-			for (int j = 0; j < numbers.GetLength(1); j++)
+			_numbers = new int[Size, Size];
+
+			for (int i = 0; i < _numbers.GetLength(0); i++)
 			{
-				if (i == 1)
+				for (int j = 0; j < _numbers.GetLength(1); j++)
 				{
-					numbers[i, j] = 1;
+					if (i == j)
+					{
+						_numbers[i, j] = i;
+					}
 				}
 			}
 		}
 
-		string path = Path.Combine(Environment.CurrentDirectory, "Plik3a.txt");
-		StringBuilder textToSave = new();
-		for (int i = 0; i < numbers.GetLength(0); i++)
+		public void PrepareArrayToSave()
 		{
-			for (int j = 0; j < numbers.GetLength(1); j++)
+			_numbersToSave = new int[Size, Size];
+			for (int i = 0; i < _numbers.GetLength(0); i++)
 			{
-				textToSave.Append(numbers[i, j] + " ");
-			}
-			textToSave.Append(Environment.NewLine);
-		}
-		File.AppendAllText(path, textToSave.ToString());
-		Console.WriteLine(File.ReadAllText(path));
-
-		int[,] numbers2 = new int[size, size];
-		for (int i = 0; i < numbers2.GetLength(0); i++)
-		{
-			for (int j = 0; j < numbers2.GetLength(1); j++)
-			{
-				if (j == 1)
+				for (int j = 0; j < _numbers.GetLength(1); j++)
 				{
-					numbers2[i, j] = numbers[j, j];
+					if (i == j)
+					{
+						_numbersToSave[i, j] = _numbers[i, j];
+					}
 				}
 			}
 		}
-		string path2 = Path.Combine(Environment.CurrentDirectory, "Plik3b.txt");
-		textToSave.Clear();
-		for (int i = 0; i < numbers2.GetLength(0); i++)
+
+		public void SaveData()
 		{
-			for (int j = 0; j < numbers2.GetLength(1); j++)
+			StringBuilder textToSave = new();
+
+			for (int i = 0; i < _numbersToSave.GetLength(0); i++)
 			{
-				textToSave.Append(numbers2[i, j] + " ");
+				for (int j = 0; j < _numbersToSave.GetLength(1); j++)
+				{
+					textToSave.Append(_numbersToSave[i, j] + " ");
+				}
+				if (i < _numbersToSave.GetLength(0) - 1)
+				{
+					textToSave.Append(Environment.NewLine);
+				}
 			}
-			textToSave.Append(Environment.NewLine);
+
+			File.WriteAllText(_path, textToSave.ToString());
 		}
-		File.AppendAllText(path2, textToSave.ToString());
-		Console.WriteLine(File.ReadAllText(path2));
+
+		public void ShowData()
+		{
+			_numbersFromFile = new int[Size, Size];
+
+			var lines = File.ReadAllLines(_path);
+			for (int i = 0; i < lines.Length; i++)
+			{
+				var numbers = lines[i].TrimEnd().Split(' ').Select(int.Parse).ToArray();
+				for (int j = 0; j < numbers.Length; j++)
+				{
+					_numbersFromFile[i, j] = numbers[j];
+				}
+			}
+
+			for (int i = 0; i < _numbersFromFile.GetLength(0); i++)
+			{
+				for (int j = 0; j < _numbersFromFile.GetLength(1); j++)
+				{
+					Console.Write(_numbersFromFile[i, j] + " ");
+				}
+				Console.WriteLine();
+			}
+		}
 	}
 
 	#endregion Chapter_7
